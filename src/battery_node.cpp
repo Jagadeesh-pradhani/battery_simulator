@@ -56,6 +56,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr recharging_pub_;
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr recharge_sub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr replace_battery_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     float map_number(float x, float in_min, float in_max, float out_min, float out_max)
@@ -170,6 +171,21 @@ private:
         eq_.fit(eq_deg, data);
     }
 
+    void replace_battery_callback(const std_msgs::msg::Bool::SharedPtr msg)
+    {
+        if (msg->data) {
+            // Reset battery to initial state
+            percent_ = initial_percent_;
+            power_ = map_number(percent_, 0, 100, 0, total_power_);
+            recharging_ = false;
+            discharge_rate_ = base_power_consumption_ / (float)(60 * 60 * 1000);
+            recharge_rate_ = 0;
+            voltage_ = base_voltage_;
+
+            RCLCPP_INFO(this->get_logger(), "Battery replaced. Reset to initial state.");
+        }
+    }
+
 public:
     BatterySimulator() : Node("battery_simulator")
     {
@@ -249,6 +265,10 @@ public:
         );
         cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
             cmd_vel_topic_, 1, std::bind(&BatterySimulator::cmd_vel_callback, this, std::placeholders::_1)
+        );
+        replace_battery_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+            "replace_battery", 1, 
+            std::bind(&BatterySimulator::replace_battery_callback, this, std::placeholders::_1)
         );
 
         // Initialize battery state

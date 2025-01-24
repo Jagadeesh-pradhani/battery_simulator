@@ -24,6 +24,7 @@ At every second the battery node publishes to three topics related to the batter
 - voltage: The voltage of the battery
 - percent: The voltage of the battery as a percent value (0-100)
 - recharging: A boolean indicating if the battery is recharging
+- replace_battery: A boolean indicating wether the battery is replaced with new one
 
 ## Parameters
 
