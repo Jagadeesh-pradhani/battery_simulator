@@ -41,13 +41,13 @@ At every second the battery node publishes to three topics related to the batter
     - The maximum current the battery can provide to the robot
 - recharge_current (int, default: 2400mAh)
     - The maximum current the charger can provide to the battery
-    ~base_power_consumption (int, default: 200mAh)
-        The average current used by the robot when it is not moving (motors disabled)
-    ~motors_power_consumption (int, default: 5000mAh)
-        The average current used by the robot when it is moving (motors enabled)
-    ~num_batteries (int, default: 1)
-        This is the number os batteries the robot have. The maximum current the robot can use is the discharge_current multiplied by the number of batteries.
-    ~cmd_vel_topic (string, default: /cmd_vel)
-        This is the topic that the node will subscribe to get the robot velocity and calculates the power consumption.
-    ~verbose (bool, default: false)
-        When setted to true, the node will show the battery status at every second.
+- base_power_consumption (int, default: 200mAh)
+  - The average current used by the robot when it is not moving (motors disabled)
+- motors_power_consumption (int, default: 5000mAh)
+  - The average current used by the robot when it is moving (motors enabled)
+- num_batteries (int, default: 1)
+  - This is the number os batteries the robot have. The maximum current the robot can use is the discharge_current multiplied by the number of batteries.
+- cmd_vel_topic (string, default: /cmd_vel)
+  - This is the topic that the node will subscribe to get the robot velocity and calculates the power consumption.
+- verbose (bool, default: false)
+  - When setted to true, the node will show the battery status at every second.
