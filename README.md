@@ -27,21 +27,20 @@ At every second the battery node publishes to three topics related to the batter
 
 ## Parameters
 
-
-    ~discharge_model (string, default: exponential)
-        The discharge model of the battery, it can be exponential, linear and invert
-    ~max_voltage (float, default: 12.5V)
-        The maximum voltage in the battery
-    ~min_voltage (float, default: 11.5V)
-        The minimum voltage in the battery
-    ~base_voltage (float, default: 12.0V)
-        The base voltage of the battery (used for power calculus)
-    ~initial_percent (int, default: 100%)
-        This is the percent of charge of the battery at launch time
-    ~discharge_current (int, default: 7000mAh)
-        The maximum current the battery can provide to the robot
-    ~recharge_current (int, default: 2400mAh)
-        The maximum current the charger can provide to the battery
+1 discharge_model (string, default: exponential)
+    - The discharge model of the battery, it can be exponential, linear and invert
+2 max_voltage (float, default: 12.5V)
+    - The maximum voltage in the battery
+3 min_voltage (float, default: 11.5V)
+    - The minimum voltage in the battery
+4 base_voltage (float, default: 12.0V)
+    - The base voltage of the battery (used for power calculus)
+5 initial_percent (int, default: 100%)
+    - This is the percent of charge of the battery at launch time
+6 discharge_current (int, default: 7000mAh)
+    - The maximum current the battery can provide to the robot
+7 recharge_current (int, default: 2400mAh)
+    - The maximum current the charger can provide to the battery
     ~base_power_consumption (int, default: 200mAh)
         The average current used by the robot when it is not moving (motors disabled)
     ~motors_power_consumption (int, default: 5000mAh)
