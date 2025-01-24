@@ -9,6 +9,7 @@ cd ~/ros2_ws/src
 git cloone https://github.com/Jagadeesh-pradhani/battery_simulator.git
 cd ..
 colcon build
+source install/setup.bash
 ```
 
 ## Use
