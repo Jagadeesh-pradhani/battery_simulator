@@ -26,7 +26,7 @@ def generate_launch_description():
                          "base_power_consumption": 25000,
                          "motors_power_consumption": 30000,
                          "num_batteries": 2,
-                         "cmd_vel_topic": "/cmd_vel",
+                         "cmd_vel_topic": "/simple_drone/cmd_vel",
                          "verbose": True
                          }] 
         )
