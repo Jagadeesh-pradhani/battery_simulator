@@ -1,0 +1,59 @@
+default:
+  ros__parameters:
+    discharge_model: "linear"
+    max_voltage: 12.6
+    min_voltage: 9.6
+    base_voltage: 11.1
+    initial_percent: 100
+    discharge_current: 1500
+    recharge_current: 1500
+    base_power_consumption: 800
+    motors_power_consumption: 5000
+    num_batteries: 1
+    cmd_vel_topic: "/simple_drone/cmd_vel"
+    verbose: true
+
+light_drone:
+  ros__parameters:
+    discharge_model: "linear"
+    max_voltage: 12.6
+    min_voltage: 10.5
+    base_voltage: 11.4
+    initial_percent: 100
+    discharge_current: 1000
+    recharge_current: 1500
+    base_power_consumption: 500
+    motors_power_consumption: 3000
+    num_batteries: 1
+    cmd_vel_topic: "/simple_drone/cmd_vel"
+    verbose: true
+
+heavy_drone:
+  ros__parameters:
+    discharge_model: "linear"
+    max_voltage: 12.6
+    min_voltage: 9.6
+    base_voltage: 11.1
+    initial_percent: 100
+    discharge_current: 3000
+    recharge_current: 2000
+    base_power_consumption: 1200
+    motors_power_consumption: 8000
+    num_batteries: 2
+    cmd_vel_topic: "/simple_drone/cmd_vel"
+    verbose: true
+
+aggressive_flight:
+  ros__parameters:
+    discharge_model: "linear"
+    max_voltage: 12.6
+    min_voltage: 9.0
+    base_voltage: 11.1
+    initial_percent: 100
+    discharge_current: 20000
+    recharge_current: 3000
+    base_power_consumption: 1500
+    motors_power_consumption: 60000
+    num_batteries: 1
+    cmd_vel_topic: "/simple_drone/cmd_vel"
+    verbose: true
