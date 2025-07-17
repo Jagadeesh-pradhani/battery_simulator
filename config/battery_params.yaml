@@ -1,3 +1,6 @@
+
+# motor: dji 2212 920kv 
+# battery: 3s LiPo 3300 35c
 default:
   ros__parameters:
     discharge_model: "linear"
@@ -5,10 +8,10 @@ default:
     min_voltage: 9.6
     base_voltage: 11.1
     initial_percent: 100
-    discharge_current: 1500
+    discharge_current: 3300
     recharge_current: 1500
-    base_power_consumption: 800
-    motors_power_consumption: 5000
+    base_power_consumption: 2000
+    motors_power_consumption: 120000
     num_batteries: 1
     cmd_vel_topic: "/simple_drone/cmd_vel"
     verbose: true
