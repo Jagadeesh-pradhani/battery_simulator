@@ -14,7 +14,7 @@ default:
     motors_power_consumption: 120000
     num_batteries: 1
     cmd_vel_topic: "/simple_drone/cmd_vel"
-    verbose: true
+    verbose: false
 
 light_drone:
   ros__parameters:
